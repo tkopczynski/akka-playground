@@ -10,6 +10,9 @@ object PrinterActor extends App {
 
 class PrinterActor extends Actor {
   override def receive: Receive = {
-    case msg: String => println(s"Printing: $msg")
+    case msg: String => {
+      println(s"Printing: $msg")
+      sender() ! (if (msg.length < 4) 1 else 0)
+    }
   }
 }
