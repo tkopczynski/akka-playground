@@ -16,7 +16,7 @@ object SenderActor extends App {
 
   implicit val timeout = Timeout(5, TimeUnit.SECONDS)
 
-  val remoteActor = system.actorSelection("akka.tcp://PrinterActorSystem@127.0.0.1:31337/user/PrinterActor")
+  val remoteActor = system.actorSelection("akka.tcp://PrinterActorSystem@akka-printer:2552/user/PrinterActor")
 
   println("Type some text. Every new line will get printed in the PrintActor. Use `exit` for ending the session.")
 

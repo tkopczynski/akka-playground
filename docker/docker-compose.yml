@@ -1,0 +1,10 @@
+version: '3'
+services:
+                akka-printer:
+                        image: "akka-printer"
+                        command: sbt run
+                akka-sender:
+                        image: "akka-sender"
+                        command: sbt run
+                        stdin_open: true
+                        tty: true
